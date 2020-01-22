@@ -44,12 +44,12 @@ def chooseStyleSettings(headline=False):
     alignment.horz = xlwt.Alignment.HORZ_CENTER
     style.alignment = alignment
 
-    style.font = choose_font_settings(headline)
+    style.font = chooseFontSettings(headline)
 
     return style
 
 
-def headline_writer(num, date, time, line_count, character_list, worksheet, delay, headline=True):
+def headlineWriter(num, date, time, line_count, character_list, worksheet, delay, headline=True):
     """
     Функция записи заголовков
     
@@ -69,8 +69,8 @@ def headline_writer(num, date, time, line_count, character_list, worksheet, dela
     i = 0
 
     # Задание стилей ячеек
-    style = choose_style_settings(headline)
-    style1 = choose_style_settings(headline=False)
+    style = chooseStyleSettings(headline)
+    style1 = chooseStyleSettings(headline=False)
 
     # Запись заголовков
     worksheet.write(line_count, 0, TEST_NUMBER, style)
@@ -93,7 +93,7 @@ def headline_writer(num, date, time, line_count, character_list, worksheet, dela
     return line_count
 
 
-def one_string_writer(data, line_count, worksheet):
+def oneStringWriter(data, line_count, worksheet):
     """
     Функция записи строки данных
     
@@ -105,7 +105,7 @@ def one_string_writer(data, line_count, worksheet):
     """
     
     # Задание стиля ячеек
-    style = choose_style_settings()
+    style = chooseStyleSettings()
 
     i = 0
     char_count = 4
@@ -120,7 +120,7 @@ def one_string_writer(data, line_count, worksheet):
     return line_count
 
 
-def save_data(workbook, dir):
+def saveData(workbook, dir):
     """
     Функция сохранения данных
     
